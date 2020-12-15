@@ -38,7 +38,7 @@ class PrimaryController extends Controller
         $extension = $request->file('file')->extension();
   
         //Checking extensions & saving to sql server
-        if($extension=="json"){
+        if($extension="json"){
             // return 'everything is okay';
             $file = implode($file);
         

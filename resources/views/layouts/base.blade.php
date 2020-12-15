@@ -25,6 +25,10 @@
             right: 25px;
             display: none;
             }
+
+            body{
+                overflow: hidden;
+            }
     </style>
 </head>
 <body>
