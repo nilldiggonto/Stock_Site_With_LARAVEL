@@ -17,12 +17,12 @@ class CreateJsonModelsTable extends Migration
             $table->id();
             ## Custom Fields
             $table->datetime('date');
-            $table->integer('trade_code');
-            $table->integer('high');
-            $table->integer('low');
-            $table->integer('open');
-            $table->integer('close');
-            $table->integer('volume');
+            $table->string('trade_code');
+            $table->string('high');
+            $table->string('low');
+            $table->string('open');
+            $table->string('close');
+            $table->string('volume');
             ## End Custom Fields
             $table->timestamps();
         });
