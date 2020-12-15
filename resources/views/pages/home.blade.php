@@ -9,7 +9,7 @@
   
  
   <p class="lead">
-    <a class="btn btn-primary btn-lg" href="#" role="button">Go to Stock Chart</a>
+    <a class="btn btn-primary btn-lg" href="/stocks" role="button">Go to Stock Chart</a>
   </p>
 
 </div><!--jumbotron-->

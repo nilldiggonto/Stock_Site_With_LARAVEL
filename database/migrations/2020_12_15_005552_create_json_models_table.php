@@ -16,7 +16,7 @@ class CreateJsonModelsTable extends Migration
         Schema::create('json_models', function (Blueprint $table) {
             $table->id();
             ## Custom Fields
-            $table->datetime('date');
+            $table->string('date');
             $table->string('trade_code');
             $table->string('high');
             $table->string('low');
