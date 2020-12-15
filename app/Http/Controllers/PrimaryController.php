@@ -43,7 +43,11 @@ class PrimaryController extends Controller
             $file = implode($file);
         
             $parts = json_decode($file,true);
+            try{
             $objs = (array_chunk($parts,5000));
+            }catch(\Exception $e){
+                return redirect('/load')->with('error','Couldnt understand the File Format');
+            }
             foreach ($objs as $obj)  {
                 foreach ($obj as $key => $value) {
                     $insertArr[Str::slug($key,'_')] = $value;
