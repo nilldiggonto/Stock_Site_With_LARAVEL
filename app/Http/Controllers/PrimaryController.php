@@ -51,7 +51,7 @@ class PrimaryController extends Controller
                 try{
                 DB::table('json_models')->insert($insertArr);
                 }catch(\Exception $e){
-                    return redirect('/load')->with('error','Upload a json file with stock data');
+                    return redirect('/load')->with('error','Couldnt understand the Json File');
                 }
 
             }

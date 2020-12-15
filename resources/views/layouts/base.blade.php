@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stock</title>
 
+    <link rel="shortcut icon" href="https://freepngimg.com/thumb/stock_market/26072-3-stock-market-file-thumb.png" type="image/x-icon">
+
     <!--Bootstrap CDN-->
     <link rel="stylesheet" href="https://bootswatch.com/4/lumen/bootstrap.css">
     <!--For DateTime Input Form-->
