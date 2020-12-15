@@ -4,8 +4,8 @@
 
 @section('content')
 
-<div class="jumbotron bg-secondary">
-  <h1 class="display-3">Welcome to stock site!</h1>
+<div class="jumbotron bg-dark mt-4" style="margin-bottom:200px;">
+  <h1 class="display-3 text-white">Welcome to stock site!</h1>
   
  
   <p class="lead">

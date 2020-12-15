@@ -38,7 +38,7 @@ class PrimaryController extends Controller
         $extension = $request->file('file')->extension();
   
         //Checking extensions & saving to sql server
-        if($extension="json"){
+        if($extension=="json"){
             // return 'everything is okay';
             $file = implode($file);
         
@@ -48,7 +48,12 @@ class PrimaryController extends Controller
                 foreach ($obj as $key => $value) {
                     $insertArr[Str::slug($key,'_')] = $value;
                 }
+                try{
                 DB::table('json_models')->insert($insertArr);
+                }catch(\Exception $e){
+                    return redirect('/load')->with('error','Upload a json file with stock data');
+                }
+
             }
             return redirect('/')->with('success','Database Created Go to Stock Chart');
         }
