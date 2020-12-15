@@ -15,6 +15,15 @@ class CreateJsonModelsTable extends Migration
     {
         Schema::create('json_models', function (Blueprint $table) {
             $table->id();
+            ## Custom Fields
+            $table->datetime('date');
+            $table->integer('trade_code');
+            $table->integer('high');
+            $table->integer('low');
+            $table->integer('open');
+            $table->integer('close');
+            $table->integer('volume');
+            ## End Custom Fields
             $table->timestamps();
         });
     }

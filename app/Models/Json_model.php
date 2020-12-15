@@ -7,5 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Json_model extends Model
 {
-    use HasFactory;
+    protected $guarded = [];
+    protected $primaryKey = 'id';
+    public $incrementing = false;
+    public $timestamps = true;
 }
