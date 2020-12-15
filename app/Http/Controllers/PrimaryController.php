@@ -8,6 +8,6 @@ class PrimaryController extends Controller
 {
     public function home()
     {
-        return 'anything';
+        return view('pages.home');
     }
 }

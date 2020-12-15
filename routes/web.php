@@ -1,8 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controller\PrimaryController; #For Homepage
+use App\Http\Controllers\PrimaryController; 
 
 
 ##PrimaryController
-Route::get('/',[PrimaryController::class,'home']); #Route for Homepage 
+Route::get('/',[PrimaryController::class,'home']); //Route for Homepage 
