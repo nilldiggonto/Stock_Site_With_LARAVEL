@@ -43,23 +43,25 @@ class PrimaryController extends Controller
             $file = implode($file);
         
             $parts = json_decode($file,true);
-            try{
-            $objs = (array_chunk($parts,5000));
-            }catch(\Exception $e){
-                return redirect('/load')->with('error','Couldnt understand the File Format');
-            }
-            foreach ($objs as $obj)  {
-                foreach ($obj as $key => $value) {
-                    $insertArr[Str::slug($key,'_')] = $value;
+            if(!empty($parts)){
+                $objs = (array_chunk($parts,5000));
+                foreach ($objs as $obj)  {
+                    foreach ($obj as $key => $value) {
+                        $insertArr[Str::slug($key,'_')] = $value;
+                    }
+                    try{
+                    DB::table('json_models')->insert($insertArr);
+                    }catch(\Exception $e){
+                        return redirect('/load')->with('error','Couldnt understand the Json File');
+                    }
+    
                 }
-                try{
-                DB::table('json_models')->insert($insertArr);
-                }catch(\Exception $e){
-                    return redirect('/load')->with('error','Couldnt understand the Json File');
-                }
-
+                return redirect('/')->with('success','Database Created Go to Stock Chart');
             }
-            return redirect('/')->with('success','Database Created Go to Stock Chart');
+            else{
+                return redirect('/load')->with('error','File should be Json Formatted ');
+            }
+            
         }
         else{ 
             return redirect('/load')->with('error','File should be Json Formatted ');
