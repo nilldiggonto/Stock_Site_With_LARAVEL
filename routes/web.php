@@ -6,3 +6,4 @@ use App\Http\Controllers\PrimaryController;
 
 ##PrimaryController
 Route::get('/',[PrimaryController::class,'home']); //Route for Homepage 
+Route::get('/load',[PrimaryController::class,'load']); //Load Json Form
